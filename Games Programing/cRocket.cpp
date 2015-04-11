@@ -10,9 +10,9 @@ void cRocket::render()
 {
 	glPushMatrix();
 
-	glTranslatef(spritePos2D.x, spritePos2D.y, 0.0f);
+	glTranslatef(spritePos2D.x, 700, 0.0f);
 	glRotatef(spriteRotation, 0.0f, 0.0f, 1.0f);
-	glScalef(spriteScaling.x, spriteScaling.y, 1.0f);
+	glScalef(spriteScaling.x-.5, spriteScaling.y-.5, 1.0f);
 
 	glEnable(GL_TEXTURE_2D);
 	glBindTexture(GL_TEXTURE_2D, GLTextureID); // Binding of GLtexture name 
@@ -51,19 +51,19 @@ void cRocket::update(float deltaTime)
 	}*/
 	if (m_InputMgr->isKeyDown(int('W')))
 	{
-		spriteTranslation = (glm::vec2(2.0f, 2.0f));
+		//spriteTranslation = (glm::vec2(2.0f, 2.0f));
 	}
 	if (m_InputMgr->isKeyDown(int('S')))
 	{
-		spriteTranslation = -(glm::vec2(2.0f, 2.0f));
+		//spriteTranslation = -(glm::vec2(2.0f, 2.0f));
 	}
-	if (m_InputMgr->isKeyDown(int('A')))
+	if (m_InputMgr->isKeyDown(VK_RIGHT))
 	{
-		spriteRotation -= 5.0f;
+		spriteTranslation = (glm::vec2(2.0f, 0.0f));
 	}
-	if (m_InputMgr->isKeyDown(int('D')))
+	if (m_InputMgr->isKeyDown(VK_LEFT))
 	{
-		spriteRotation += 5.0f;
+		spriteTranslation = -(glm::vec2(2.0f, 0.0f));
 	}
 
 	if (m_InputMgr->isKeyDown(VK_SPACE))
@@ -71,7 +71,7 @@ void cRocket::update(float deltaTime)
 		// Add new bullet sprite to the vector array
 		theRocketBullets.push_back(new cBullet);
 		int numBullets = theRocketBullets.size() - 1;
-		theRocketBullets[numBullets]->setSpritePos(glm::vec2(spritePos2D.x , spritePos2D.y));
+		theRocketBullets[numBullets]->setSpritePos(glm::vec2(spritePos2D.x , 700));
 		theRocketBullets[numBullets]->setSpriteTranslation(glm::vec2(2.0f, 2.0f));
 		theRocketBullets[numBullets]->setTexture(theGameTextures[4]->getTexture());
 		theRocketBullets[numBullets]->setTextureDimensions(theGameTextures[4]->getTWidth(), theGameTextures[4]->getTHeight());
@@ -89,9 +89,11 @@ void cRocket::update(float deltaTime)
 		spriteRotation -= 360.0f;
 	}
 
+	//X axis moves by one now, no longer compensates for ship rotation, as there is no need.
+
 	glm::vec2 spriteVelocityAdd = glm::vec2(0.0f, 0.0f);
-	spriteVelocityAdd.x = (glm::sin(glm::radians(spriteRotation)));
-	spriteVelocityAdd.y = -(glm::cos(glm::radians(spriteRotation)));
+	spriteVelocityAdd.x = (1);
+	// spriteVelocityAdd.y = -(glm::cos(glm::radians(spriteRotation)));
 
 	spriteVelocityAdd *= spriteTranslation;
 

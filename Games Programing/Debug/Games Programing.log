@@ -1,8 +1,9 @@
-﻿Build started 09/04/2015 02:13:31.
+﻿Build started 11/04/2015 17:19:49.
      1>Project "E:\University\Year 2\games programming 1\GP1\Games Programing\Games Programing.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt cRocket.cpp
          cRocket.cpp
+     1>e:\university\year 2\games programming 1\gp1\games programing\crocket.cpp(15): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
      1>e:\university\year 2\games programming 1\gp1\games programing\crocket.cpp(23): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
      1>e:\university\year 2\games programming 1\gp1\games programing\crocket.cpp(25): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
      1>e:\university\year 2\games programming 1\gp1\games programing\crocket.cpp(27): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
@@ -35,4 +36,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.95
+Time Elapsed 00:00:00.94
