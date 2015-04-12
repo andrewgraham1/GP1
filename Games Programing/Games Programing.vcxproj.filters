@@ -133,5 +133,11 @@
     <Library Include="Libraries\OpenAL32.lib">
       <Filter>Resource Files</Filter>
     </Library>
+    <Library Include="Libraries\glew32s.lib">
+      <Filter>Resource Files</Filter>
+    </Library>
+    <Library Include="Libraries\glew32.lib">
+      <Filter>Resource Files</Filter>
+    </Library>
   </ItemGroup>
 </Project>
